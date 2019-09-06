@@ -1,0 +1,105 @@
+<ion-view title="Stats">
+<ion-content padding="true">
+
+<select ng-model="myDropDown">
+    <option value="table">Table</option>
+    <option value="fixtures">Fixtures/Results</option>
+    <option value="clubVClub">Club Vs Club</option>
+    <option value="sinBins">Sin bins</option>
+    <option value="topScorers">Top Scorers</option>
+</select>
+
+<div ng-show="myDropDown=='table'">
+	<br/>
+	<table class="table table-striped" ng-table>
+	  <tr>
+		<th>Team Name</th>
+		<th>Played</th>
+		<th>Won</th>
+		<th>Lost</th>
+		<th>Points</th>
+	  </tr>
+	  <tr ng-repeat="team in table" ng-class-odd="'odd'" ng-class-even="'even'">
+		<td>{{team.teamName}}</td>
+		<td>{{team.played}}</td>
+		<td>{{team.won}}</td>
+		<td>{{team.drawn}}</td>
+		<td>{{team.points}}</td>
+	  </tr>
+	</table>
+</div>
+
+<div ng-show="myDropDown=='fixtures'">
+	<br/>
+	<table class="table table-striped">
+	  <tr>
+		<th>Date</th>
+		<th>Team</th>
+		<th>Score</th>
+	  </tr>
+	  <tr ng-repeat="fixture in fixtureResults" ng-class-odd="'odd'" ng-class-even="'even'">
+		<td>{{fixture.dateTime}}</td>
+		<td>{{fixture.team}}</td>
+		<td>{{fixture.score}}</td>
+	  </tr>
+	</table>
+</div>
+
+<div ng-show="myDropDown=='clubVClub'">
+	<br/>
+	<table class="table table-striped">
+	  <tr>
+		<th>Club</th>
+		<th>Won</th>
+		<th>Draw</th>
+		<th>Lost</th>
+		<th>For</th>
+		<th>Against</th>
+	  </tr>
+	  <tr ng-repeat="club in clubVsClub" ng-class-odd="'odd'" ng-class-even="'even'">
+		<td>{{club.club}}</td>
+		<td>{{club.won}}</td>
+		<td>{{club.draw}}</td>
+		<td>{{club.lost}}</td>
+		<td>{{club.pointFor}}</td>
+		<td>{{club.pointAgainst}}</td>
+	  </tr>
+	</table>
+</div>
+
+<div ng-show="myDropDown=='sinBins'">
+	<br/>
+	<table class="table table-striped">
+	  <tr>
+		<th>Player</th>
+		<th>Yellows</th>
+		<th>Mins per card</th>
+	  </tr>
+	  <tr ng-repeat="sinbin in sinBins" ng-class-odd="'odd'" ng-class-even="'even'">
+		<td>{{sinbin.player}}</td>
+		<td>{{sinbin.yellows}}</td>
+		<td>{{sinbin.minPerCard}}</td>
+	  </tr>
+	</table>
+</div>
+
+<div ng-show="myDropDown=='topScorers'">
+	<br/>
+	<table class="table table-striped">
+	  <tr>
+		<th>Points</th>
+		<th>Player</th>
+		<th>Tries</th>
+		<th>Points</th>
+	  </tr>
+	  <tr ng-repeat="player in sinBins" ng-class-odd="'odd'" ng-class-even="'even'">
+		<td>{{player.points}}</td>
+		<td>{{player.player}}</td>
+		<td>{{player.tries}}</td>
+		<td>{{player.points}}</td>
+	  </tr>
+	</table>
+</div>
+
+</ion-view>
+

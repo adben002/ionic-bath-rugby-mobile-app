@@ -1,0 +1,20 @@
+<!-- 
+  This template gets placed in the Pet tab's <ion-nav-view> directive.
+  It was wired up in the app config (app.js) 
+  The 'pets' data comes from its $scope within PetIndexCtrl (controller.js)
+-->
+<ion-view title="News">
+  <ion-content>
+
+    <ion-list>
+
+      <ion-item ng-repeat="rss in allRss" type="item-text-wrap" href="#/tab/rssDetail/{{rss.id}}" class="wrap">
+        <h3>{{rss.title}}</h3>
+        <div ng-bind-html="rss.description"></div>
+      </ion-item>
+      
+    </ion-list>
+
+  </ion-content>
+</ion-view>
+

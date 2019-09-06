@@ -1,0 +1,38 @@
+<!--
+This template loads for the 'tab.man-of-the-match' state (app.js)
+-->
+<ion-view title="Man of the match">
+	<ion-content padding="true">
+	<div id='playerPictures'>
+		<img ng-repeat="player in players" ng-src="img/players/{{player}}" ng-click="VoteFor(player)" class='image player'/>   
+	</div>
+	
+	<div id="revoteDiv" class="hide">
+		<button type="button" ng-click="reVote()">Click here to change your vote!</button>
+		<br/>
+		<br/>
+	</div>
+	
+		<table id="resultsTable" class='hide'>
+			<tr>
+				<th></th>
+				<th>Player</th>
+				<th>Percentage Votes</th>
+			</tr>
+			<tr ng-repeat="data in dataset" ng-class-odd="'odd'" ng-class-even="'even'">
+				<td>
+					<img src="img/players/{{data.name}}.jpg" class="thumbnail">
+				</td>
+				<td>
+					{{data.name}}
+				</td>
+				<td>
+					{{data.percentage}} %
+				</td>
+			</tr>
+		</table>
+	
+	
+	</ion-content>
+</ion-view>
+

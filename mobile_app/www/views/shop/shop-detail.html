@@ -1,0 +1,23 @@
+<!--
+  This template loads for the 'tab.pet-detail' state (app.js)
+  'pet' is a $scope variable created in the PetCtrl controller (controllers.js)
+  The PetCtrl pulls data from the Pets service (service.js)
+  The Pets service returns an array of pet data
+-->
+<ion-view title="{{product.title}}">
+  <ion-content padding="true">
+
+
+    <h2>{{product.title}}</h2>
+    <p>
+      {{product.description}}
+    </p>
+    <img ng-src="{{product.picture}}" class="fit-view"/>
+    <h3>£ {{product.price}}</h3>
+    
+    <button ng-click="buyNow()"> Buy Now !</button>
+    <p></p>
+    <p><a class="button button-small icon ion-arrow-left-b" href="#/tab/shop">Back To Shop</a></p>
+  </ion-content>
+</ion-view>
+

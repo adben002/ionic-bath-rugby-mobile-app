@@ -1,0 +1,32 @@
+<!--
+This template loads for the 'tab.card' state (app.js)
+-->
+<ion-view title="Top Trumps Card Game">
+	<ion-content padding="true">
+		<div id="card" class="card">
+		
+			<div id="picture">
+				<br>
+				<img src="img/players/{{currentPlayerName}}.jpg" class="rounded">
+				<br>
+				<span class="cardText">
+					<h3>Name: {{currentPlayerName}}</h3>
+					<h4>Height: {{playerStats.height}}</h4>
+					<h4>Weight: {{playerStats.weight}}</h4>
+					<h4>Speed: {{playerStats.speed}}</h4>
+					<h4>Strength: {{playerStats.strength}}</h4>
+					<h4>Kick: {{playerStats.kick}}<h4>
+					<h4>Passing: {{playerStats.passing}}<h4>
+				</span>
+			</div>
+		</div>
+		<div id='youLose' class='hide'>
+			<h1>YOU LOSE, SUCKAA!!</h1>
+		</div>
+		
+		<button id='winButton' ng-click="winClick()" class="win">Win!</button>
+		<button id='loseButton' ng-click="loseClick()" class="lose">Lose!</button>
+		
+	</ion-content>
+</ion-view>
+

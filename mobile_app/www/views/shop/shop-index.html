@@ -1,0 +1,21 @@
+<!-- 
+  This template gets placed in the Pet tab's <ion-nav-view> directive.
+  It was wired up in the app config (app.js) 
+  The 'pets' data comes from its $scope within PetIndexCtrl (controller.js)
+-->
+<ion-view title="Shop">
+  <ion-content>
+
+    <ion-list>
+
+      <ion-item ng-repeat="product in products" type="item-text-wrap" href="#/tab/shop/{{product.id}}" class="wrap">
+        <h2>{{product.title}}</h2>
+        <img ng-src="{{product.picture}}" class="fit-view"/>
+        <h3>£ {{product.price}}</h3>
+      </ion-item>
+      
+    </ion-list>
+
+  </ion-content>
+</ion-view>
+
